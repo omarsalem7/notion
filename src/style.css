@@ -1,3 +1,16 @@
-.hello {
-  color: red;
+.container {
+  padding: 4% 20%;
+}
+
+.container h1 {
+  font-size: 2.2rem;
+}
+
+.editable-input {
+  outline: none;
+}
+
+.editable-input:empty::before {
+  content: attr(data-placeholder);
+  color: #9da3ae;
 }
