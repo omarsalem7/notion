@@ -1,5 +1,5 @@
 import './style.css';
-import createMenu from './menuSelection.js';
+import createMenu, { removeMenu } from './menuSelection.js';
 
 const contentContainer = document.getElementById('edit-container');
 const firstInput = document.getElementById('input-1');
@@ -9,5 +9,7 @@ firstInput.addEventListener('input', () => {
     // create a selection menu
     createMenu(contentContainer);
     // select option
+  } else {
+    removeMenu();
   }
 });

@@ -1,9 +1,14 @@
-const menulist = ['heading1', 'heading2'];
+const menulistItems = ['heading1', 'heading2'];
 const createMenu = (container) => {
-  const menu = menulist.map((menuItem) => `<li>${menuItem}</li>`);
+  const menu = menulistItems.map((menuItem) => `<li>${menuItem}</li>`);
   const menuList = document.createElement('ul');
+  menuList.setAttribute('id', 'menu-list');
   menuList.innerHTML = menu.join('');
   container.appendChild(menuList);
+};
+
+export const removeMenu = () => {
+  document.getElementById('menu-list')?.remove();
 };
 
 export default createMenu;
