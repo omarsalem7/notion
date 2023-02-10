@@ -1,6 +1,6 @@
 const selectOption = () => {
-  const selectionOptions = document.querySelectorAll('.menu-item');
-  selectionOptions.forEach((item) => {
+  const menuOptions = document.querySelectorAll('.menu-item');
+  menuOptions.forEach((item) => {
     item.addEventListener('click', () => {
       console.log(item.role);
     });
