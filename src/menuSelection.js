@@ -1,6 +1,8 @@
 const menulistItems = ['heading1', 'heading2'];
 const createMenu = (container) => {
-  const menu = menulistItems.map((menuItem) => `<li>${menuItem}</li>`);
+  const menu = menulistItems.map(
+    (menuItem) => `<li class='menu-item' role=${menuItem}>${menuItem}</li>`
+  );
   const menuList = document.createElement('ul');
   menuList.setAttribute('id', 'menu-list');
   menuList.innerHTML = menu.join('');
