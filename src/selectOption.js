@@ -1,8 +1,13 @@
-const selectOption = () => {
+import { removeMenu } from './menuSelection';
+
+const selectOption = (editableInput) => {
   const menuOptions = document.querySelectorAll('.menu-item');
   menuOptions.forEach((item) => {
     item.addEventListener('click', () => {
-      console.log(item.role);
+      editableInput.setAttribute('data-placeholder', item.role);
+      editableInput.textContent = '';
+      editableInput.classList.add(item.role);
+      removeMenu();
     });
   });
 };

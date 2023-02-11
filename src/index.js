@@ -11,7 +11,7 @@ firstInput.addEventListener('input', () => {
     // create a selection menu
     createMenu(contentContainer);
     // select option
-    selectOption();
+    selectOption(firstInput);
     filterMenuOptions(firstInput.textContent.slice(1));
   } else {
     removeMenu();

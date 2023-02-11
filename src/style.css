@@ -14,3 +14,9 @@
   content: attr(data-placeholder);
   color: #9da3ae;
 }
+
+.heading1 {
+  font-size: 1.875em;
+  padding: 3px 2px;
+  font-weight: 600;
+}
