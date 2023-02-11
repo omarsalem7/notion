@@ -12,7 +12,7 @@ firstInput.addEventListener('input', () => {
     createMenu(contentContainer);
     // select option
     selectOption();
-    filterMenuOptions(firstInput.textContent.slice(1) || '');
+    filterMenuOptions(firstInput.textContent.slice(1));
   } else {
     removeMenu();
   }

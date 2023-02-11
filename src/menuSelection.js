@@ -17,4 +17,11 @@ export const removeMenu = () => {
   isMenuCreated = false;
 };
 
+// Handle the case when user click escape the menu removed
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    console.log('Escape cliked');
+  }
+});
+
 export default createMenu;
