@@ -20,7 +20,7 @@
   width: 200px;
   z-index: 2;
   position: relative;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
   overflow: hidden auto;
   max-height: 100px;
   padding: 15px;
@@ -37,12 +37,11 @@
 #menu-list .menu-item {
   display: flex;
   padding: 10px;
-  display: flex;
   align-items: center;
   gap: 1rem;
 }
 
-.menu-item:hover {
+#menu-list .menu-item:hover {
   background-color: #f3f4f6;
   cursor: pointer;
 }
