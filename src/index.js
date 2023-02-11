@@ -2,6 +2,9 @@ import './style.css';
 import createMenu, { removeMenu } from './menuSelection.js';
 import selectOption from './selectOption.js';
 import filterMenuOptions from './filterMenu.js';
+import hitNumberHandler, {
+  createNewEmptylineHandler,
+} from './hitEnterHandler.js';
 
 const contentContainer = document.getElementById('edit-container');
 const firstInput = document.getElementById('input-1');
@@ -21,30 +24,18 @@ const newInputHandler = (editor = firstInput) => {
 };
 
 const createNewLine = (editor) => {
-  // handle the case to create a new line
   editor.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
       event.preventDefault();
       if (editor.textContent[0] === '/' && editor.textContent[1] === '1') {
-        // editor.className = 'input';
-        editor.classList.add('editable-input', 'heading1');
-        editor.setAttribute('data-placeholder', 'Heading 1');
-        editor.textContent = editor.textContent.slice(2);
-        editor.focus();
-        removeMenu();
+        hitNumberHandler(editor, 'heading1');
+      } else if (
+        editor.textContent[0] === '/'
+        && editor.textContent[1] === '2'
+      ) {
+        hitNumberHandler(editor, 'heading2');
       } else if (editor.textContent === '') {
-        editor.removeAttribute('data-placeholder');
-        const newEle = document.createElement('div');
-        newEle.classList.add('editable-input');
-        newEle.contentEditable = true;
-        newEle.setAttribute(
-          'data-placeholder',
-          'Type / for blocks, @ link docs'
-        );
-        newEle.id = 'input-1';
-        contentContainer.appendChild(newEle);
-        newEle.focus();
-        newInputHandler(newEle);
+        newInputHandler(createNewEmptylineHandler(editor, contentContainer));
       }
     }
   });
