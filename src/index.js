@@ -22,21 +22,17 @@ const newInputHandler = (editor = firstInput) => {
   // handle the case to create a new line
   editor.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      console.log('test');
+      event.preventDefault();
       if (editor.textContent === '') {
         editor.removeAttribute('data-placeholder');
       }
       const newEle = document.createElement('div');
       newEle.classList.add('editable-input');
       newEle.contentEditable = true;
-      newEle.setAttribute(
-        'data-placeholder',
-        'Type / for blocks, @ link docssssssss'
-      );
+      newEle.setAttribute('data-placeholder', 'Type / for blocks, @ link docs');
       newEle.id = 'input-1';
       contentContainer.appendChild(newEle);
       newEle.focus();
-      console.log('newEle');
       newInputHandler(newEle);
     }
   });
