@@ -6,6 +6,7 @@ const selectOption = (editableInput) => {
     item.addEventListener('click', () => {
       editableInput.setAttribute('data-placeholder', item.role);
       editableInput.textContent = '';
+      editableInput.className = 'editable-input';
       editableInput.classList.add(item.role);
       removeMenu();
     });

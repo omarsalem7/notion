@@ -8,6 +8,7 @@
 
 .editable-input {
   outline: none;
+  padding: 3px 2px;
 }
 
 .editable-input:empty::before {
@@ -17,6 +18,10 @@
 
 .heading1 {
   font-size: 1.875em;
-  padding: 3px 2px;
+  font-weight: 600;
+}
+
+.heading2 {
+  font-size: 1.5em;
   font-weight: 600;
 }
