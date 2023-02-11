@@ -8,8 +8,7 @@ const hitNumberHandler = (editor, heading) => {
   removeMenu();
 };
 
-export const createNewEmptylineHandler = (editor, contentContainer) => {
-  editor.removeAttribute('data-placeholder');
+export const createNewEmptylineHandler = (contentContainer) => {
   const newEle = document.createElement('div');
   newEle.classList.add('editable-input');
   newEle.contentEditable = true;

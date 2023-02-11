@@ -35,10 +35,10 @@ const createNewLine = (editor) => {
       ) {
         hitNumberHandler(editor, 'heading2');
       } else if (editor.textContent === '') {
-        newInputHandler(createNewEmptylineHandler(editor, contentContainer));
+        editor.removeAttribute('data-placeholder');
       }
+      newInputHandler(createNewEmptylineHandler(contentContainer));
     }
   });
 };
-
 newInputHandler();
