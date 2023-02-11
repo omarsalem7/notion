@@ -10,7 +10,7 @@ const newInputHandler = (editor = firstInput) => {
   editor.addEventListener('input', () => {
     if (editor.textContent[0] === '/') {
       // create a selection menu
-      createMenu(contentContainer);
+      createMenu(editor);
       // select option
       selectOption(editor);
       filterMenuOptions(editor.textContent.slice(1));
