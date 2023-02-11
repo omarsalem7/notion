@@ -1,7 +1,7 @@
 import './style.css';
 import createMenu, { removeMenu } from './menuSelection.js';
 import selectOption from './selectOption.js';
-import filterMenuOptions from './filterMenu';
+import filterMenuOptions from './filterMenu.js';
 
 const contentContainer = document.getElementById('edit-container');
 const firstInput = document.getElementById('input-1');

@@ -1,4 +1,4 @@
-import { removeMenu } from './menuSelection';
+import { removeMenu } from './menuSelection.js';
 
 const selectOption = (editableInput) => {
   const menuOptions = document.querySelectorAll('.menu-item');
