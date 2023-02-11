@@ -88,8 +88,6 @@ To run the project, execute the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
-
 👤 **Omar Salem**
 
 - GitHub: [@omarsalem7](https://github.com/omarsalem7)
