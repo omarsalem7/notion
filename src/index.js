@@ -6,14 +6,40 @@ import filterMenuOptions from './filterMenu';
 const contentContainer = document.getElementById('edit-container');
 const firstInput = document.getElementById('input-1');
 
-firstInput.addEventListener('input', () => {
-  if (firstInput.textContent[0] === '/') {
-    // create a selection menu
-    createMenu(contentContainer);
-    // select option
-    selectOption(contentContainer);
-    filterMenuOptions(firstInput.textContent.slice(1));
-  } else {
-    removeMenu();
-  }
-});
+const newInputHandler = (editor = firstInput) => {
+  editor.addEventListener('input', () => {
+    if (editor.textContent[0] === '/') {
+      // create a selection menu
+      createMenu(contentContainer);
+      // select option
+      selectOption(editor);
+      filterMenuOptions(editor.textContent.slice(1));
+    } else {
+      removeMenu();
+    }
+  });
+
+  // handle the case to create a new line
+  editor.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      console.log('test');
+      if (editor.textContent === '') {
+        editor.removeAttribute('data-placeholder');
+      }
+      const newEle = document.createElement('div');
+      newEle.classList.add('editable-input');
+      newEle.contentEditable = true;
+      newEle.setAttribute(
+        'data-placeholder',
+        'Type / for blocks, @ link docssssssss'
+      );
+      newEle.id = 'input-1';
+      contentContainer.appendChild(newEle);
+      newEle.focus();
+      console.log('newEle');
+      newInputHandler(newEle);
+    }
+  });
+};
+
+newInputHandler();

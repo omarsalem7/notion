@@ -1,10 +1,9 @@
-const menulistItems = ['h1', 'h2'];
+const menulistItems = ['heading1', 'heading2'];
 let isMenuCreated = false;
 const createMenu = (container) => {
   if (isMenuCreated) return;
   const menu = menulistItems.map(
-    (menuItem) =>
-      `<li class='menu-item' role=${menuItem}>heading${menuItem.slice(-1)}</li>`
+    (menuItem) => `<li class='menu-item' role=${menuItem}>${menuItem}</li>`
   );
   const menuList = document.createElement('ul');
   menuList.setAttribute('id', 'menu-list');
