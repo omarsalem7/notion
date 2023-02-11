@@ -8,6 +8,7 @@ const selectOption = (editableInput) => {
       editableInput.textContent = '';
       editableInput.className = 'editable-input';
       editableInput.classList.add(item.role);
+      editableInput.focus();
       removeMenu();
     });
   });
