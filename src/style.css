@@ -1,0 +1,66 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container .title {
+  font-size: 2.2rem;
+  padding-bottom: 20px;
+  border-bottom: 1.3px solid rgba(220, 220, 220, 0.801);
+}
+
+.editable-input {
+  outline: none;
+  padding: 3px 2px;
+  content: attr(data-placeholder);
+  position: relative;
+}
+
+#menu-list {
+  width: 200px;
+  z-index: 2;
+  position: relative;
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  overflow: hidden auto;
+  max-height: 100px;
+  padding: 15px;
+  background-color: #fff;
+}
+
+#menu-list div:first-child {
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+#menu-list .menu-item {
+  display: flex;
+  padding: 10px;
+  align-items: center;
+  gap: 1rem;
+}
+
+#menu-list .menu-item:hover {
+  background-color: #f3f4f6;
+  cursor: pointer;
+}
+
+#menu-list .menu-item img {
+  width: 25px;
+}
+
+.editable-input:empty::before {
+  content: attr(data-placeholder);
+  color: #9da3ae;
+}
+
+.heading1 {
+  font-size: 1.875em;
+  font-weight: 600;
+}
+
+.heading2 {
+  font-size: 1.5em;
+  font-weight: 600;
+}
