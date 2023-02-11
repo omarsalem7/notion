@@ -1,14 +1,22 @@
+import textIcon from './icons/text.png';
+
 const menulistItems = ['heading1', 'heading2'];
 let isMenuCreated = false;
-const createMenu = (container) => {
+const createMenu = (editor) => {
   if (isMenuCreated) return;
   const menu = menulistItems.map(
-    (menuItem) => `<li class='menu-item' role=${menuItem}>${menuItem}</li>`,
+    (menuItem) => `<li class='menu-item' role=${menuItem}><img src=${textIcon} alt="dsadsa"/><span>${
+      menuItem[0].toUpperCase() + menuItem.slice(1)
+    }</span></li>`,
   );
+  const menuListContent = `
+    <div>Choose block</div>
+    ${menu.join('')}
+  `;
   const menuList = document.createElement('ul');
   menuList.setAttribute('id', 'menu-list');
-  menuList.innerHTML = menu.join('');
-  container.appendChild(menuList);
+  menuList.innerHTML = menuListContent;
+  editor.after(menuList);
   isMenuCreated = true;
 };
 
